@@ -1,0 +1,38 @@
+Class Product
+	private double startNum;
+	private double product;
+	Scanner scnr = new Scanner;
+	ArrayList<double> unusedNums = new ArrayList<double>();
+	ArrayList<double> usedNums = new ArrayList<double>();
+	
+	public double multiply(ArrayList<Double> unusedNums, ArrayList<Double> usedNums)
+		base case if unusedNums size is == 1
+			product = product * unusedNums.get(0);
+			return product;
+			
+		recursive case else	
+			//multiply the first two elements in unusedNums
+			product = unusedNums.get(0) * unusedNums.get(1)
+			
+			//add first element to usedNums then remove from unusedNums and repeat 1 more time
+			usedNums.add(unusedNums.get(0))
+			unusedNums.remove(0)
+			usedNums.add(unusedNums.get(0))
+			unusedNums.remove(0)
+			
+			recursive call
+			multiply(unusedNums, usedNums)
+			
+	
+	public static void main(String[] args)
+		System.out.println("Enter 5 numbers");
+		while(unusedNums.size < 5)
+			try
+				unusedNums.add(scnr.nextDouble)
+			catch exception e
+				System.out.println("Invalid entry." + e.getMessage();
+		double finalProduct = multiply(unusedNums, usedNums)
+		System.out.print("The product of ");
+		for(double num : usedNums)
+			System.out.print(num + " ")
+		System.out.println("is: " + finalProduct)
