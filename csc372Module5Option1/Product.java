@@ -38,10 +38,11 @@ public class Product {
 		System.out.println("Enter 5 Numbers");
 		while(unusedNums.size() < 5) {
 			try {
+				System.out.println("Enter " + (5 - unusedNums.size()) + " numbers");
 				unusedNums.add(scnr.nextDouble());
 			}
 			catch(Exception e) {
-				System.out.println("Invalid Input" + e.getMessage());
+				System.out.println("Invalid Input: " + scnr.next());
 			}
 		}
 		
